@@ -15,7 +15,7 @@
  *
  */
 
-package io.pivotal.solutions.pcc.server;
+package io.pivotal.solutions.pcc.model;
 
 
 import lombok.AllArgsConstructor;
@@ -36,16 +36,6 @@ import java.io.Serializable;
 public class Customer implements Serializable{
 
     @Id
-    private int id;
-    private int telephonecountrycode, age;
-    private String gender, nameset, title, givenname, middleinitial, surname, streetaddress, city, state, statefull,
-            zipcode, country, countryfull, emailaddress, username, password, browseruseragent, telephonenumber,
-            maidenname, birthday, tropicalzodiac, cctype, ccnumber, cvv2, ccexpires, nationalid, upstracking,
-            color, occupation, company, vehicle, domain, bloodtype, pounds, kilograms,
-            feetinches, centimeters, guid;
-    @Column(name = "moneygrammtcn", columnDefinition = "bpchar(8)", length = 8)
-    private String moneygrammtcn;
-    @Column(name = "westernunionmtcn", columnDefinition = "bpchar(10)", length = 10)
-    private String westernunionmtcn;
-    private float latitude, longitude;
+    private String id;
+    private String Name;
 }

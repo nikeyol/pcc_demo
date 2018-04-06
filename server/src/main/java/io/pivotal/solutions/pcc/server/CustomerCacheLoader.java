@@ -17,24 +17,35 @@
 
 package io.pivotal.solutions.pcc.server;
 
+import io.pivotal.solutions.pcc.model.Customer;
 import org.apache.geode.cache.CacheLoader;
 import org.apache.geode.cache.CacheLoaderException;
 import org.apache.geode.cache.Declarable;
 import org.apache.geode.cache.LoaderHelper;
 import org.hibernate.Session;
 
-public class CustomerCacheLoader implements CacheLoader<Integer, Customer>, Declarable {
+public class CustomerCacheLoader implements CacheLoader<String, Customer>, Declarable {
 
-    public Customer load(LoaderHelper<Integer, Customer> helper) throws CacheLoaderException {
+    public Customer load(LoaderHelper<String, Customer> helper) throws CacheLoaderException {
         Customer returnValue;
 
         Session session = HibernateSingleton.getInstance().openSession();
         try {
+            // For demo purpose to show cache miss and grab from the database
+            sleep3secs();
             returnValue = session.get(Customer.class, helper.getKey());
         } finally {
             session.close();
         }
         return returnValue;
+    }
+
+    private void sleep3secs() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void close() {

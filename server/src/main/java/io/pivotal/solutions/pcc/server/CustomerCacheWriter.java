@@ -17,6 +17,7 @@
 
 package io.pivotal.solutions.pcc.server;
 
+import io.pivotal.solutions.pcc.model.Customer;
 import org.apache.geode.cache.CacheWriterException;
 import org.apache.geode.cache.Declarable;
 import org.apache.geode.cache.EntryEvent;

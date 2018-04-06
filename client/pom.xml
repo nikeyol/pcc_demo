@@ -17,12 +17,19 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-ws</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-geode</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.40</version>
+        </dependency>
+
 
         <dependency>
             <groupId>io.springfox</groupId>
@@ -35,7 +42,7 @@
 
         <dependency>
             <groupId>io.pivotal.solutions.pcc</groupId>
-            <artifactId>server</artifactId>
+            <artifactId>model</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -49,6 +56,21 @@
             <groupId>io.pivotal.spring.cloud</groupId>
             <artifactId>spring-cloud-gemfire-cloudfoundry-connector</artifactId>
             <version>1.2.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-spring-service-connector</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-cloudfoundry-connector</artifactId>
         </dependency>
 
     </dependencies>
