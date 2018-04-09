@@ -10,18 +10,18 @@
 
 ## Purpose
 
-* Demo server side code with inline cache loader and cache writer
-* Demo wan replication to replicate the system records (Mysql) across two sites
-* Demo Spring gemfire code on client side
+* Demo server side code with cache loader and cache writer
+* Demo wan replication to replicate the system records (mysql) across two sites
+* Demo spring gemfire code on client side
 
-## Setup two foundations with PAF, PCC and Mysql
+## Setup two foundations with PAS, PCC and Mysql
 
 ![](images/pcf_image.png)
-[PCF](https://docs.pivotal.io/pivotalcf/)
-[PCC](https://docs.pivotal.io/p-cloud-cache/1-3/index.html)
-[MYSQL](http://docs.pivotal.io/p-mysql/1-10/index.html)
 
-[Access PAAS ](https://docs.pivotal.io/p-cloud-cache/1-3/developer.html#accessing)
+  * [PCF](https://docs.pivotal.io/pivotalcf/)
+  * [PCC](https://docs.pivotal.io/p-cloud-cache/1-3/index.html)
+  * [MYSQL](http://docs.pivotal.io/p-mysql/1-10/index.html)
+  * [Access PAAS ](https://docs.pivotal.io/p-cloud-cache/1-3/developer.html#accessing)
 
 ## Build and Deploy
 
@@ -84,7 +84,7 @@
   create region --name=customers --gateway-sender-id=send_to_1 --type=PARTITION_REDUNDANT --cache-loader=io.pivotal.solutions.pcc.server.CustomerCacheLoader --cache-writer=io.pivotal.solutions.pcc.server.CustomerCacheWriter
   ```
 
-  Create Order region for look aside demo
+  Create order region for look aside demo
   ```
   create region --name=orders --type=PARTITION_REDUNDANT
   ```
@@ -124,6 +124,7 @@
 ## Demo look aside cache (Single site)
 
  * Load an order to DB directly **Not Through cache**
+   ![](images/loadOrderToDB.png)
 
  * Read an order through Cache
 
