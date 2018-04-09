@@ -30,7 +30,7 @@ public class HibernateSingleton {
 
     private HibernateSingleton() {
         StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
-                .configure("hibernate.cfg.xml")
+                .configure("hibernate.cfg2.xml")
                 .build();
         Metadata metaData = new MetadataSources(standardRegistry).getMetadataBuilder().build();
         sessionFactory = metaData.getSessionFactoryBuilder().build();

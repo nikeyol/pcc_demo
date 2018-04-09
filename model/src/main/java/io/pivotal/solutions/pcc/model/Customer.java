@@ -23,7 +23,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -37,5 +36,5 @@ public class Customer implements Serializable{
 
     @Id
     private String id;
-    private String Name;
+    private String name;
 }
