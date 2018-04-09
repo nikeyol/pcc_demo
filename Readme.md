@@ -21,7 +21,7 @@
   * [PCF](https://docs.pivotal.io/pivotalcf/)
   * [PCC](https://docs.pivotal.io/p-cloud-cache/1-3/index.html)
   * [MYSQL](http://docs.pivotal.io/p-mysql/1-10/index.html)
-  * [Access PAAS ](https://docs.pivotal.io/p-cloud-cache/1-3/developer.html#accessing)
+  * [Access PCC Cache Cluster ](https://docs.pivotal.io/p-cloud-cache/1-3/developer.html#accessing)
 
 ## Build and Deploy
 
@@ -47,7 +47,7 @@
 
 * Setup wan replication on both system (using gfsh)
 
-  Grab remote site credential (```cf service-key pcc pcc-key```) and setup on the local service
+  Find remote site credentials (```cf service-key pcc pcc-key```) and setup on the local site
 
   ```
   cf update-service pcc -c '
@@ -137,4 +137,4 @@
 
 ## Current Problem
 
-* Server side DB connection hard coding   
+* DB connection string for server side code is hard coded
